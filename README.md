@@ -3,46 +3,46 @@
 
 
 
-
-
 🔍 Features
-Real-time cattle detection using OpenCV and a pre-trained model (YOLO or similar)
-Vision-Language AI (Gemini) provides detailed understanding of cattle behavior
-Smart frame capture: captures one frame every 2 minutes to reduce API usage
-Text logging: AI-generated descriptions are saved to gemini_log.txt
-Streamlit dashboard for simple viewing and interaction
-Frame saving: captured frames are stored in uploads/ for reference
+
+Real-time Detection: Identifies various cattle types (cows, sheep, buffalo, goats, pigs) in video streams
+Activity Recognition: AI-powered analysis of what the animals are doing in each frame
+Dual Input Support: Process pre-recorded videos or connect directly to webcam feeds
+Smart Processing: Configurable frame skipping for performance optimization
+Interactive Dashboard: Built with Streamlit for intuitive monitoring and control
+Activity Logging: Comprehensive record of detected animals and their behaviors
+High Accuracy: Leverages YOLOv8e for reliable detection in various conditions
 
 
+Computer Vision: OpenCV, YOLO11 object detection
+AI Integration: Google Gemini Vision Pro for semantic scene understanding
+Frontend: Streamlit interactive dashboard
+Environment Management: Python dotenv for configuration
 
 
 ⚙️ How It Works
-The system reads video frames in real time.
-When cows are detected, it captures a key frame every 2 minutes.
-The frame is sent to Gemini Vision Pro for semantic description.
-Gemini returns a human-readable scene summary (e.g., "two cows grazing under a tree").
-This description is saved in a log file and shown on a Streamlit UI.
-🛠️ Tech Stack
-Python
-OpenCV
-Streamlit
-Google Gemini Vision API
- cv2 for image processing
 
+Detection Pipeline: Video frames are processed through YOLO11 to detect and classify cattle
+Crop & Analyze: Detected animals are cropped from the frame and sent to Gemini Vision
+AI Description: Gemini analyzes each animal's posture, position, and activity
+Display & Log: Results are displayed in real-time and stored for analysis 
 
-
-
-
-
-
-
-HOW TO RUN 
-make a folder load yolo11.pt shown in ipynb file
-make .env file , where you will store your api with variable name GEMINI_API_KEY=
-enter you python env 
-and run app.py file
+git clone https://github.com/yourusername/cattle-detection.git
+cd cattle-detection
+# Create .env file with your Gemini API key
+echo "GEMINI_API_KEY=your_api_key_here" > .env
+download yolo11.pt model using code in ipynb 
 streamlit run app.py
-all files vlm , app , detection.py  ,env and detection.ipynb should be in one single file 
+
+
+cattle-detection/
+├── app.py                # Main Streamlit application
+├── cattledetection.py    # YOLO-based detection module
+├── vlm.py                # Gemini Vision integration
+├── .env                  # API keys and configuration
+└── uploads/              # Folder for analyzed frames
+
+
 
 
 
