@@ -1,49 +1,63 @@
-# realtime-video-based-battle-detection-and-survilliance-system
-🐄 Cattle Monitoring System with VLM &amp; Streamlit This project is a real-time cattle activity monitoring system built using OpenCV, Google Gemini Vision Pro (a vision-language model), and Streamlit. It detects cattle in video footage, captures frames at intervals, and sends them to Gemini for semantic scene analysis.
+#🐄 Real-Time Video-Based Cattle Activity Detection & Surveillance System
+
+A real-time cattle behavior detection and surveillance system built using OpenCV, YOLOv11, Google Gemini Flash 2.0, and Streamlit. This intelligent system monitors cattle behavior in real-time and provides AI-powered semantic understanding of their activity.
 
 
+## 🔍 Features
 
-🔍 Features
+- ✅ **Real-time Cattle Detection**  
+  Detects and classifies cows, buffaloes, goats, sheep, and pigs using **YOLOv11**.
 
-Real-time Detection: Identifies various cattle types (cows, sheep, buffalo, goats, pigs) in video streams
-Activity Recognition: AI-powered analysis of what the animals are doing in each frame
-Dual Input Support: Process pre-recorded videos or connect directly to webcam feeds
-Smart Processing: Configurable frame skipping for performance optimization
-Interactive Dashboard: Built with Streamlit for intuitive monitoring and control
-Activity Logging: Comprehensive record of detected animals and their behaviors
-High Accuracy: Leverages YOLOv8e for reliable detection in various conditions
+- 🤖 **AI-Powered Activity Recognition**  
+  Uses **Gemini Flash 2.0** for high-speed vision-language scene understanding to analyze posture and activity.
 
+- 🎥 **Flexible Video Input**  
+  Supports live webcam feed and pre-recorded video uploads.
 
-Computer Vision: OpenCV, YOLO11 object detection
-AI Integration: Google Gemini Vision Pro for semantic scene understanding
-Frontend: Streamlit interactive dashboard
-Environment Management: Python dotenv for configuration
+- ⚡ **Configurable Frame Skipping**  
+  Boost performance by skipping frames dynamically.
 
+- 📊 **Interactive Streamlit Dashboard**  
+  Control, view, and analyze results in a clean, real-time interface.
 
-⚙️ How It Works
+- 📁 **Activity Logging & Frame Storage**  
+  Automatically logs animal activity and saves analyzed frames.
 
-Detection Pipeline: Video frames are processed through YOLO11 to detect and classify cattle
-Crop & Analyze: Detected animals are cropped from the frame and sent to Gemini Vision
-AI Description: Gemini analyzes each animal's posture, position, and activity
-Display & Log: Results are displayed in real-time and stored for analysis 
+---
 
-git clone https://github.com/yourusername/cattle-detection.git
-cd cattle-detection
-# Create .env file with your Gemini API key
-echo "GEMINI_API_KEY=your_api_key_here" > .env
-download yolo11.pt model using code in ipynb 
-streamlit run app.py
+## 🛠️ Tech Stack
 
+| Layer              | Tools Used                              |
+|--------------------|------------------------------------------|
+| **Computer Vision**| OpenCV, YOLOv11                          |
+| **AI/VLM**         | Google Gemini Flash 2.0                  |
+| **Frontend**       | Streamlit                                |
+| **Environment**    | Python `dotenv` for config and secrets   |
 
-cattle-detection/
-├── app.py                # Main Streamlit application
-├── cattledetection.py    # YOLO-based detection module
-├── vlm.py                # Gemini Vision integration
-├── .env                  # API keys and configuration
-└── uploads/              # Folder for analyzed frames
+---
 
+## ⚙️ How It Works
 
+1. **Frame Capture**  
+   Input from webcam or uploaded video is read using OpenCV.
 
+2. **YOLOv11 Detection**  
+   Objects in each frame are detected and classified (cattle types).
+
+3. **Cropping + VLM Analysis**  
+   Detected animals are cropped and sent to **Gemini Flash 2.0**, which semantically understands:
+   - Posture (e.g. standing, walking, lying down)
+   - Behavior (e.g. grazing, fighting, running)
+
+4. **Display & Logging**  
+   - Results displayed in real-time via Streamlit  
+   - Each detection is logged and saved
+
+---
+
+## 📁 Project Structure
+
+cattle-detection/ ├── app.py # Main Streamlit app ├── cattledetection.py # YOLOv11 detection logic ├── vlm.py # Gemini Flash 2.0 integration ├── .env # API key and config └── uploads/ # Saved analyzed frames
 
 
  
