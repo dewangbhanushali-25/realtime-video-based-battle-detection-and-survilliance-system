@@ -59,5 +59,11 @@ A real-time cattle behavior detection and surveillance system built using OpenCV
 
 cattle-detection/ ├── app.py # Main Streamlit app ├── cattledetection.py # YOLOv11 detection logic ├── vlm.py # Gemini Flash 2.0 integration ├── .env # API key and config └── uploads/ # Saved analyzed frames
 
+# how to run the program
+- in folder use .env to manage api (here GEMINI_KEY is variable of api)
+- then use streamlit run app.py in specfic venv of python where streamlit is installed
+- you will taken to a browser, input your video by selecting video and start detect
+- this will generate detection and log of detection and vlm answer , the api is  called after 3 mins making it cost and time efficent
+
 
  
