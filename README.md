@@ -29,4 +29,21 @@ Streamlit
 Google Gemini Vision API
  cv2 for image processing
 
+
+
+
+
+
+
+
+HOW TO RUN 
+make a folder load yolo11.pt shown in ipynb file
+make .env file , where you will store your api with variable name GEMINI_API_KEY=
+enter you python env 
+and run app.py file
+streamlit run app.py
+all files vlm , app , detection.py  ,env and detection.ipynb should be in one single file 
+
+
+
  
