@@ -7,7 +7,7 @@ from ultralytics import YOLO
 # Define cattle classes
 CATTLE_CLASSES = ["sheep", "cow", "buffalo", "goat", "pig"]
 
-def load_model(model_path="/home/dew/intership/project1/main/yolo11n.pt"):
+def load_model(model_path="yolo11n.pt"):
     """
     Load the YOLO model with error handling
     """
@@ -16,7 +16,7 @@ def load_model(model_path="/home/dew/intership/project1/main/yolo11n.pt"):
         if not os.path.exists(model_path):
             # Use pre-trained model if custom model doesn't exist
             print(f"Model {model_path} not found, using default YOLO model")
-            model = YOLO("/home/dew/intership/project1/main/yolo11n.pt.pt")  # Default to YOLOv8 nano
+            model = YOLO("yolo11n.pt")  # Default to YOLOv8 nano
         else:
             model = YOLO(model_path)
         return model
